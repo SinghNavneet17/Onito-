@@ -1,0 +1,26 @@
+Make sure the CSV files (movies.csv and ratings.csv) are in a directory accessible from the MySQL CMD.
+
+Load the CSV data into the respective tables using the LOAD DATA INFILE command. Adjust the file paths and table names as needed. For example:
+
+sql command
+============
+LOAD DATA INFILE 'movies.csv'
+INTO TABLE movies
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+
+sql command
+============
+LOAD DATA INFILE 'ratings.csv'
+INTO TABLE ratings
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+
+You can query the tables to verify that the data has been successfully imported. For example:
+---------------------------------------------------------------------------------------------
+SELECT * FROM movies;
+SELECT * FROM ratings;
